@@ -1,0 +1,30 @@
+.poke-no {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0 10px;
+    margin: 10px 0;
+    border-right: 1px solid #ccc;
+    margin-right: 15px;
+    font-size: 49px;
+}
+
+.poke-description {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.poke-description div{
+    font-size: 14px;
+    margin-top: 5px;
+    text-shadow: 0.5px 1px #999;
+}
+
+.detail-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}

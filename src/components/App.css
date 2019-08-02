@@ -1,0 +1,23 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+body {
+    background: url('../assets/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Roboto, Tahoma;
+}
+
+.container-app {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media(max-width : 918px){
+    .container-app {
+        flex-direction: column;
+    }
+}

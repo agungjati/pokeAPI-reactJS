@@ -1,0 +1,39 @@
+.my-pokes {
+    width: 400px;
+    padding: 20px 0;
+}
+
+.container-my-pokes{
+    float: left
+}
+
+.container-my-pokes .poke {
+    width: 42%;
+    margin: 10px 0 10px 5%;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width: 918px){
+    .my-pokes {
+        max-width: 90%;
+        margin-top: 30px;
+    }
+}
+
+@media(max-width : 460px){
+    .container-my-pokes .poke {
+        width: 47%;
+        margin-left: 2%;
+    }
+}
+
+@media(max-width : 390px){
+    .container-my-pokes .poke {
+        width: 90%;
+        margin-left: 6%;
+    }
+}
