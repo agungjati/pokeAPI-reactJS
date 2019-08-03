@@ -5,6 +5,8 @@ import DetailPokeContainer from '../containers/DetailPokeContainer'
 import { ImagePoke } from '../assets/ListPokeImage'
 import PropTypes from 'prop-types'
 
+
+
 class Poke extends React.Component {
 
     constructor(props){
@@ -27,7 +29,7 @@ class Poke extends React.Component {
     }
 
     render() {
-        const { id, name, isDetail } = this.props
+        const { id, name } = this.props
         return(
             <>
         <Card className="poke" onClick={this.handleOpenDetail}>
@@ -43,5 +45,8 @@ class Poke extends React.Component {
 
     }
 }
+
+
+
 
 export default Poke;

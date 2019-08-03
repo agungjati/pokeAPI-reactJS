@@ -2,15 +2,18 @@ import { ActionTypeEnum } from '../actions'
 import { combineReducers } from 'redux'
 
 const ListPokeState = ( state = { pokes : [], fetching : true, error: false } , 
-    { type, pokes = [], errorMessage = "" }) => {
+    { type, pokes = [], id, errorMessage = "" }) => {
     switch(type) {
         case ActionTypeEnum.REFRESH_POKES :
             return {
-             pokes : pokes,
+             pokes : [...pokes],
              fetching : false,
              error : false,
              errorMessage : ""
             };
+        case ActionTypeEnum.REMOVE_POKE_LIST :
+            state.pokes = state.pokes.filter(p => p.id !== id)
+            return state
         case ActionTypeEnum.FETCHING_POKES :
             return {
              pokes : state.pokes,
@@ -76,4 +79,18 @@ const updatePoke = (state, poke) => {
     return state.pokes
 }
 
-export default combineReducers({ ListPokeState, PokeState })
+const MyPokeState = ( states =  [] , 
+    { type, poke = {} }) => {
+    switch(type) {
+        case ActionTypeEnum.CATCH_POKE :
+            return [...states, poke]
+        case ActionTypeEnum.REMOVE_MYPOKE :
+            states = states.filter(s => s.id !== poke.id)
+            return states
+        default :
+            return states
+    }
+}
+
+
+export default combineReducers({ ListPokeState, PokeState, MyPokeState })

@@ -3,11 +3,12 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import PropTypes from 'prop-types'
 import { ImagePoke } from '../assets/ListPokeImage'
 import Chip from '@material-ui/core/Chip';
+import { connect } from 'react-redux'
+import { catchPoke } from '../actions'
 
 class DetailPoke extends React.Component {
     constructor(props) {
@@ -24,13 +25,12 @@ class DetailPoke extends React.Component {
         this.props.getPoke(this.props.id)
     }
 
-    componentDidUpdate() {
-        console.log("detail poke ", this.props.id, " ", this.props)
+    onCatchPoke = () => {
+        this.props.catchPoke(this.props.poke)
     }
 
     render() {
         const { id, name, height, weight } = this.props.poke
-        console.log("fetching poke detail : ", this.props.fetching)
         return (
             <Dialog
                 style={this.props.fetching ? { opacity: 0.5 } : { opacity: 1 }}
@@ -59,10 +59,14 @@ class DetailPoke extends React.Component {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={this.props.handleClose} color="primary">Close</Button>
-                    <Button onClick={this.props.handleClose} color="primary">Catch</Button>
+                    <Button onClick={this.onCatchPoke} color="primary">Catch</Button>
                 </DialogActions>
             </Dialog>)
     }
 }
 
-export default DetailPoke;
+const mapDispatchProp = (dispatch) => ({
+    catchPoke : (poke) => dispatch(catchPoke(poke))
+})
+
+export default connect( null, mapDispatchProp, null, { pure : false })(DetailPoke);

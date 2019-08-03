@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 import DetailPoke from '../components/DetailPoke'
 import { fetchPoke } from '../actions'
 
-const mapStateProp = ({ PokeState }, ownProps) => {
-    // console.log("poke  ", PokeState )
+const mapStateProp = ({ PokeState, MyPokeState }, ownProps) => {
+     console.log("my poke  ", MyPokeState )
     const poke = PokeState.pokes.filter(p => p.id == ownProps.id)[0]
     if(poke)
         return { poke : poke, fetching : PokeState.fetching }
