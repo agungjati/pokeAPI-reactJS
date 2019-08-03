@@ -21,6 +21,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "db5bd7c6ba0c4a64e4d8d02db45df909",
-    "url": "https://agungjati.github.io/pokeAPI-reactJS/./static/media/bg.db5bd7c6.jpg"
+    "url": "https://agungjati.github.io/pokeAPI-reactJS/static/media/bg.db5bd7c6.jpg"
   }
 ]);
