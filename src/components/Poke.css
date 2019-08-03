@@ -28,3 +28,10 @@
     align-items: flex-start;
     justify-content: center;
 }
+
+.MuiButton-root.remove-btn.remove-btn{
+    background: red;
+    color: #fff;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}

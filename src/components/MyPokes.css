@@ -1,6 +1,8 @@
 .my-pokes {
     width: 400px;
     padding: 20px 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .container-my-pokes{
@@ -10,6 +12,17 @@
 .container-my-pokes .poke {
     width: 42%;
     margin: 10px 0 10px 5%;
+}
+
+.head-mypoke {
+    margin: 0 20px;
+    text-shadow: 1px 2px #282421;
+    background: #b4ddf6;
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 18px;
+    padding-bottom: 10px;
 }
 
 .flex-center {

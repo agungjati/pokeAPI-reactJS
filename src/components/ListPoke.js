@@ -23,7 +23,9 @@ class ListPoke extends React.Component {
     return (
       <div className="flex-center" style={ fetching ? { opacity: 0.5 } : { opacity: 1 }}>
         <Paper className="container-poke" style={{  backgroundColor: "#f5ae46d6" }}>
-        {pokes.map((p, idx) => <Poke key={idx} id={p.id} name={p.name} /> )}
+        {pokes.map((p, idx) => 
+          <Poke key={idx} id={p.id} name={p.name} enableDetail="true" /> 
+        )}
         </Paper>
       </div>
     )

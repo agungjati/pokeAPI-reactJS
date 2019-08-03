@@ -15,6 +15,7 @@
     width: 30%;
     float: left;        
     cursor: pointer;
+    position: relative;
 }   
 
 @media(max-width : 745px){

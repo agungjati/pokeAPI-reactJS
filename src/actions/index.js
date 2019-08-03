@@ -9,7 +9,8 @@ export const ActionTypeEnum = {
     ERROR_FETCHING_POKE : "Error on fetching a poke",
 
     CATCH_POKE : "Catchs a Poke",
-    REMOVE_MYPOKE : "Remove mypoke"
+    REMOVE_MYPOKE : "Remove mypoke",
+    ADD_POKE_TO_LIST : "add a poke to list"
 
 }
 
@@ -83,7 +84,18 @@ export const addMyPoke = (poke) => ({
 })
 
 
-export const removeMyPoke = (poke) => ({
+export const removeMyPoke = (poke) => dispatch =>{
+    dispatch(removerealMyPoke(poke))
+    dispatch(addaPoketoList(poke))
+} 
+
+
+export const removerealMyPoke = (poke) => ({
     type : ActionTypeEnum.REMOVE_MYPOKE,
+    poke : poke,
+})
+
+export const addaPoketoList = (poke) => ({
+    type : ActionTypeEnum.ADD_POKE_TO_LIST,
     poke : poke,
 })

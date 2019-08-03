@@ -27,6 +27,7 @@ class DetailPoke extends React.Component {
 
     onCatchPoke = () => {
         this.props.catchPoke(this.props.poke)
+        this.props.handleClose()
     }
 
     render() {
