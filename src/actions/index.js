@@ -35,11 +35,14 @@ export const errorOnFetchPokes =  (err) => ({
 
 export const fetchPokes = () => (dispatch) => {
     dispatch(fetchingPokes())
-    fetch("http://localhost:3000/pokes")
-    //  fetch("http://pokeapi.co/api/v2/pokemon?offset=0&limit=12")
+    // fetch("http://localhost:3000/pokes")
+     fetch("http://pokeapi.co/api/v2/pokemon?offset=0&limit=12")
     .then(response => response.json())
-    // .then(json => dispatch(addPokes(json.results)))
-    .then(json => dispatch(addPokes(json)))
+    .then(json =>{ 
+        const results = json.results.map((j, idx) => { j.id = ++idx; return j; })
+        dispatch(addPokes(results))
+    })
+    // .then(json => dispatch(addPokes(json)))
     .catch(err => {
         dispatch(errorOnFetchPokes(err))
     })
@@ -63,8 +66,8 @@ export const errorFetchingPoke  =  (err) => ({
 
 export const fetchPoke  =  (id) => (dispatch) => {
     dispatch(fetchingPoke())
-    fetch("http://localhost:3000/pokes/"+ id)
-    //fetch("http://pokeapi.co/api/v2/pokemon/"+ id)
+    // fetch("http://localhost:3000/pokes/"+ id)
+    fetch("http://pokeapi.co/api/v2/pokemon/"+ id)
     .then(response => response.json())
     .then(json => dispatch(addPoke(json)))
     .catch(err => {

@@ -4,6 +4,7 @@ import { fetchPokes } from '../actions'
 
 const mapStateProp = ({ ListPokeState }) => {
     console.log("li ", ListPokeState)
+    ListPokeState.pokes = ListPokeState.pokes.sort((a, b) => (a.id > b.id) ? 1 : -1 )
     return { ListPokeState }
 }
 
