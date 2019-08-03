@@ -67,7 +67,7 @@ export const errorFetchingPoke  =  (err) => ({
 export const fetchPoke  =  (id) => (dispatch) => {
     dispatch(fetchingPoke())
     // fetch("http://localhost:3000/pokes/"+ id)
-    fetch("http://pokeapi.co/api/v2/pokemon/"+ id)
+    fetch("https://pokeapi.co/api/v2/pokemon/"+ id)
     .then(response => response.json())
     .then(json => dispatch(addPoke(json)))
     .catch(err => {
