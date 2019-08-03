@@ -10,8 +10,8 @@ export const ActionTypeEnum = {
 
     CATCH_POKE : "Catchs a Poke",
     REMOVE_MYPOKE : "Remove mypoke",
-    ADD_POKE_TO_LIST : "add a poke to list"
-
+    ADD_POKE_TO_LIST : "add a poke to list",
+    UPDATE_MY_POKE : "Update a poke"
 }
 
 export const addPokes =  (pokes = []) => ({
@@ -89,7 +89,9 @@ export const addMyPoke = (poke) => ({
 
 export const removeMyPoke = (poke) => dispatch =>{
     dispatch(removerealMyPoke(poke))
-    dispatch(addaPoketoList(poke))
+    fetch("https://pokeapi.co/api/v2/pokemon/"+ poke.id)
+    .then(response => response.json())
+    .then(json => dispatch(addaPoketoList(json)))
 } 
 
 
@@ -98,7 +100,13 @@ export const removerealMyPoke = (poke) => ({
     poke : poke,
 })
 
+
 export const addaPoketoList = (poke) => ({
     type : ActionTypeEnum.ADD_POKE_TO_LIST,
+    poke : poke,
+})
+
+export const updatePoke = (poke) => ({
+    type : ActionTypeEnum.UPDATE_MY_POKE,
     poke : poke,
 })

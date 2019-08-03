@@ -18,7 +18,7 @@ class MyPokes extends React.Component {
                     <h3 className="head-mypoke">My Pokemons</h3>
                     <div className="container-my-pokes">
                     {pokes.map((p, idx) => 
-                        <Poke key={idx} id={p.id} name={p.name} enableSelect="true" /> 
+                        <Poke key={idx} id={p.id} name={p.name} enableEdit="true" /> 
                     )}
                     </div>
                 </Paper>

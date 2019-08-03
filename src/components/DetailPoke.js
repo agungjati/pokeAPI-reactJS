@@ -7,8 +7,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import PropTypes from 'prop-types'
 import { ImagePoke } from '../assets/ListPokeImage'
 import Chip from '@material-ui/core/Chip';
-import { connect } from 'react-redux'
-import { catchPoke } from '../actions'
 
 class DetailPoke extends React.Component {
     constructor(props) {
@@ -66,8 +64,4 @@ class DetailPoke extends React.Component {
     }
 }
 
-const mapDispatchProp = (dispatch) => ({
-    catchPoke : (poke) => dispatch(catchPoke(poke))
-})
-
-export default connect( null, mapDispatchProp, null, { pure : false })(DetailPoke);
+export default DetailPoke;

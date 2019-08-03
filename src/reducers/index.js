@@ -92,6 +92,9 @@ const MyPokeState = ( states =  [] ,
         case ActionTypeEnum.REMOVE_MYPOKE :
             states = states.filter(s => s.id !== poke.id)
             return states
+        case ActionTypeEnum.UPDATE_MY_POKE :
+            states = states.map(state => (state.id === poke.id) ? poke : state ) 
+            return states
         default :
             return states
     }

@@ -29,9 +29,8 @@
     justify-content: center;
 }
 
-.MuiButton-root.remove-btn.remove-btn{
-    background: red;
-    color: #fff;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+.head-edit-poke {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
 }
